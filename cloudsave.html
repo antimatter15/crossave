@@ -1,0 +1,56 @@
+<script>
+	window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder;
+
+	Blob.prototype.slice = Blob.prototype.slice || function(start, length) {
+		return this.webkitSlice(start, start + length);
+	}
+	
+</script>
+<script src="background.js"></script>
+<script src="cloudsave.js"></script>
+
+
+<script src="hosts/js/sha1.js"></script>
+<script src="hosts/js/md5.js"></script>
+<script src="files.js"></script>
+
+
+<script src="hosts/keys.js"></script>
+
+
+<script src="hosts/imgur.js"></script>
+<script src="hosts/immio.js"></script>
+<script src="hosts/imageshack.js"></script>
+<script src="hosts/hotfile.js"></script>
+
+<script src="hosts/box.js"></script>
+<script src="hosts/minus.js"></script>
+<script src="hosts/sugarsync.js"></script>
+<script src="hosts/cloudapp.js"></script>
+
+<script src="hosts/facebook.js"></script>
+<script src="hosts/clouddrive.js"></script>
+
+<script src="hosts/flickr.js"></script>
+
+<script src="hosts/google/chrome_ex_oauthsimple.js"></script>
+<script src="hosts/google/chrome_ex_oauth.js"></script>
+<script src="hosts/google/google.js"></script>
+<script src="hosts/google/picasa.js"></script>
+<script src="hosts/google/docs.js"></script>
+
+<script src="hosts/dropbox/oauth.js"></script>
+<script src="hosts/dropbox/modern_dropbox.js"></script>
+<script src="hosts/dropbox/dropbox.js"></script>
+
+<script src="hosts/webdav/webdav.js"></script>
+<script src="hosts/webdav/dav.js"></script>
+
+<script src="hosts/twitter.js"></script>
+<script src="hosts/twitpic.js"></script>
+<script src="hosts/twitgoo.js"></script>
+
+<script src="hosts/posterous.js"></script>
+<script src="hosts/twitrpix.js"></script>
+<script src="hosts/imgly.js"></script>
+<script src="hosts/droplr.js"></script>

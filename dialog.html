@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cloud Save</title>
+    <style>
+      body {
+        font-family: sans-serif, helvetica, arial;
+        margin-right: 40px;
+        margin-left: 90px;
+        background: url(icon/64.png) no-repeat;
+        background-position: 15px 15px;
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <h2 id="name">Cloud Save</h2>
+
+    <p>
+    	<select id="hostselect"></select>
+    	<button id="send" onclick="upload()">Save To Cloud</button>
+    </p>
+    <script>
+
+    	var fn = decodeURIComponent(location.search.substr(1));
+    	var img = false;
+    	if(/\.(jpeg|jpg|png|gif)/i.test(fn)){
+    		img = true;
+    	}
+    	
+    	var freq = chrome.extension.getBackgroundPage().updateMenus(img?'image':'all');
+    	var titles = chrome.extension.getBackgroundPage().title_map;
+    	for(var i = 0; i < freq.length; i++){
+    		var opt = document.createElement('option');
+    		var host = freq[i];
+    		opt.innerHTML = titles[host];
+    		opt.value = host;
+    		document.getElementById('hostselect').appendChild(opt);
+    	}
+    	document.getElementById('name').innerText = fn;
+    	
+    	function upload(){
+			  chrome.extension.getBackgroundPage().fupload(document.getElementById('hostselect').value, fn);
+    		window.close();
+    	}
+			
+    </script>    
+    <hr>
+    <div style="font-size: x-small">
+      Written by <a href="http://twitter.com/antimatter15" target="_blank">@antimatter15</a> (please follow me on twitter). Send comments and concerns to <a href="mailto:antimatter15@gmail.com" target="_blank">antimatter15@gmail.com</a>.
+    </div>
+
+  </body>
+</html>

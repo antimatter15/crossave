@@ -1,0 +1,31 @@
+{
+  "name": "CrOS Save",
+  "version": "1.0.4",
+  "description": "Save to cloud for Chrome OS.",
+  "background_page": "cloudsave.html",
+  "permissions": [
+    "*://*/",
+    "tabs",
+    "fileBrowserHandler",
+    "unlimitedStorage",
+    "notifications"
+  ],
+  "file_browser_handlers": [
+     {
+       "id": "upload",
+       "default_title": "Save to Cloud",
+       "file_filters": [
+         "filesystem:*"
+       ]
+     }
+   ],
+  "options_page": "settings.html",
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "64": "icon/64.png",
+    "128": "icon/128.png",
+    "512": "icon/512.png"
+  }
+}
