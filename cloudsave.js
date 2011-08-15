@@ -220,7 +220,7 @@ function updateMenus(ftype){
     if(classes.image[host] && ftype == 'image'){
   		top_list.push(host);
   	}
-  	if(classes.all[sorted[i]]){
+  	if(classes.all[host]){
   		top_list.push(host);
   	}
   }
